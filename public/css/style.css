@@ -1,3 +1,11 @@
+:root {
+  --color-1: #a96e42;
+  --color-2: #d8dfe5;
+  --color-3: #807f46;
+  --color-4: #9baaaf;
+  --color-5: #44433e;
+}
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
