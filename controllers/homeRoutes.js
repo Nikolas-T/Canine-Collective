@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Dogs, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -78,6 +78,16 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/search', async (req, res) => {
+  try {
+    res.render('search', { 
+      Dogs
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

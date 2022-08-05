@@ -1,5 +1,4 @@
 const User = require('./User');
-
 const Dogs = require('./dogs');
 
 
