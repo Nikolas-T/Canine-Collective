@@ -5,20 +5,20 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     
-    const dogData = await Dogs.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const dogData = await Dogs.findAll({
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
     
-    const dogs = dogData.map((project) => dog.get({ plain: true }));
+    // const dogs = dogData.map((project) => dog.get({ plain: true }));
 
     res.render('homepage', {  
-      logged_in: req.session.logged_in 
+      // logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
