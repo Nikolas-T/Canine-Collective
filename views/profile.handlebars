@@ -1,12 +1,12 @@
 <div class="row mt-4">
     {{#if dogs.length}}
-  <div class="col-md-6 project-list">
+  <div class="col-md-6 canine-list">
     <h3>Current Canines:</h3>
 
     {{#each dogs as |dogs|}}
     <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{dogs.id}}">{{dogs.dog_name}}</a></h4>
+      <div class="col-md-8 dog-name">
+        <h4><a href="/dogs/{{dogs.id}}">{{dogs.dog_name}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{dogs.id}}">DELETE</button>
