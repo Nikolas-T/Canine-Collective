@@ -39,6 +39,13 @@ User.init(
         len: [8],
       },
     },
+    favorites_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'favorite',
+        key: 'id',
+      },
+    }
   },
   {
     hooks: {

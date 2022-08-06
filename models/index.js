@@ -1,5 +1,7 @@
 const User = require('./User');
 const Dogs = require('./dogs');
+const Favorite = require('./Favorite');
+const Review = require('./Review');
 
 
 
@@ -16,4 +18,4 @@ Dogs.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
-module.exports = { User, Dogs };
+module.exports = { User, Dogs, Favorite, Review };

@@ -95,10 +95,10 @@ Dogs.init(
             type:DataTypes.STRING,
             allowNull:true,
         },
-        user_id: {
+        favorites_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'user',
+              model: 'favorite',
               key: 'id'
             }
           },
