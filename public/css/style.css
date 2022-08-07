@@ -36,3 +36,40 @@ nav ul {
   font-weight: bold;
   margin-left: -5px;
 }
+
+.row {
+  padding-left: 20%;
+}
+
+.FrenchBully {
+  position: absolute;
+
+  top: 50%;
+  right: 32%;
+  
+}
+
+.Corgi {
+  padding-left: 10%;
+}
+
+footer {
+  background-color: var(--color-1);
+  margin-top: 50%;
+  padding: 5% 0 5% 0
+}
+
+.heartButton {
+  text-align: center;
+}
+
+.contributors {
+  text-align: center;
+  font-weight: 500;
+}
+
+.conNames a {
+  display: inline-block;
+  padding: 20px 0 20px 0
+
+}
