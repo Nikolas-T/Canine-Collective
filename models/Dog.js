@@ -95,13 +95,6 @@ Dog.init(
             type:DataTypes.STRING,
             allowNull:true,
         },
-        favorites_id: {
-            type: DataTypes.INTEGER,
-            // references: {
-            //   model: 'favorite',
-            //   key: 'id'
-            // }
-          },
     },
     {
     sequelize,
@@ -109,7 +102,6 @@ Dog.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'dog'
-
     }
 );
 
