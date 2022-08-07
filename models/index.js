@@ -1,21 +1,31 @@
 const User = require('./User');
-const Dogs = require('./dogs');
+const Dog = require('./Dog');
 const Favorite = require('./Favorite');
+const Favorite_Dog = require('./Favorite_Dog');
 const Review = require('./Review');
 
 
+User.hasOne(Favorite);
+Favorite.belongsTo(User)
 
-User.hasMany(Dogs, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
-});
+Favorite.hasMany(Favorite_Dog);
+Favorite_Dog.belongsTo(Favorite);
 
-Dogs.belongsTo(User, {
-  foreignKey: 'user_id'
-});
+Dog.hasMany(Favorite_Dog);
+Favorite_Dog.belongsTo(Dog);
 
-Dogs.belongsTo(User, {
-  foreignKey: 'user_id'
-});
 
-module.exports = { User, Dogs, Favorite, Review };
+
+
+
+// User.hasMany(Favorite_Dog, {
+//   foreignKey: 'user_id'
+// });
+
+// Dog.belongsTo(User, {
+//   foreignKey: 'user_id'
+// });
+
+
+
+module.exports = { User, Dog, Favorite, Favorite_Dog };

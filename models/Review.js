@@ -21,17 +21,17 @@ Review.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+      // references: {
+      //   model: 'user',
+      //   key: 'id',
+      // },
     },
     dog_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'dogs',
-        key: 'id',
-      },
+      // references: {
+      //   model: 'dog',
+      //   key: 'id',
+      // },
     },
   },
   {
