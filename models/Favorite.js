@@ -11,11 +11,14 @@ Favorite.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    favorite_dog: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',

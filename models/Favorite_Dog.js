@@ -11,27 +11,27 @@ Favorite_Dog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    favorite_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'favorite',
-        key: 'id',
-      },
-    },
-    dog_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'dog',
-        key: 'id',
-      },
-    },
+    // favorite_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'favorite',
+    //     key: 'id',
+    //   },
+    // },
+    // dog_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'dog',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'favorite',
+    modelName: 'favorite_dog',
   }
 );
 
