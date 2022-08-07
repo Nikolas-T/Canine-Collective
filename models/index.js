@@ -31,4 +31,13 @@ Review.belongsTo(User, {
     }
 });
 
+Dog.hasMany(Review);
+Review.belongsTo(Dog, {
+    foreignKey: {
+        name: "dog_id",
+        allowNull: false
+    }
+})
+
+
 module.exports = { User, Dog, Favorite};
