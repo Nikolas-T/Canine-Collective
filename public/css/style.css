@@ -37,15 +37,14 @@ nav ul {
   margin-left: -5px;
 }
 
-.row {
-  padding-left: 20%;
-}
 
-.FrenchBully {
+
+.FrenchBully img {
   position: absolute;
-
-  top: 50%;
-  right: 32%;
+  top: 42%;
+  right: 42%;
+  width: 300px;
+  height: 250px
   
 }
 
@@ -55,21 +54,110 @@ nav ul {
 
 footer {
   background-color: var(--color-1);
-  margin-top: 50%;
-  padding: 5% 0 5% 0
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: center;
+  
 }
 
 .heartButton {
-  text-align: center;
+  padding-top: 2%;
+  
 }
 
 .contributors {
-  text-align: center;
   font-weight: 500;
+ 
 }
 
 .conNames a {
   display: inline-block;
-  padding: 20px 0 20px 0
+  padding: 0 10px 40px 10px
 
+}
+
+
+
+.row {
+  padding-left: 30px;
+}
+
+@media (max-width: 1900px) {
+  footer {
+   margin-top: 24.3%;
+  }
+}
+
+@media (max-width: 1600px) {
+  footer {
+   margin-top: 60%;
+  }
+}
+
+@media (max-width: 1200px) {
+  footer {
+   margin-top: 50%;
+  }
+  
+}
+
+@media (max-width: 1100px) {
+  
+  footer {
+   margin-top: 50%;
+  }
+  .FrenchBully img {
+    position: absolute;
+    right: 37%;
+  }
+}
+
+@media (max-width: 845px) {
+  footer {
+   margin-top: 60%;
+  }
+  .FrenchBully img {
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    right: 35%;
+  }
+}
+
+@media (max-width: 750px) {
+  footer {
+   margin-top: 60%;
+  }
+  .FrenchBully img {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    right: 35%;
+  }
+}
+
+@media (max-width: 420px) {
+  footer {
+   margin-top: 65%;
+  }
+  .FrenchBully img {
+  
+    position: absolute;
+    top: 50%;
+    right: 25%;
+  }
+}
+
+@media (max-width: 420px) {
+  
+}
+
+@media (max-width: 380px) {
+  .FrenchBully img {
+  
+    position: absolute;
+    top: 65%;
+    right: 25%;
+  }
 }
