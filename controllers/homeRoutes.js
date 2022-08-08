@@ -24,6 +24,12 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/profile', withAuth, (req, res) => {
+  res.render('profile', {
+    logged_in: req.session.logged_in
+  });
+});
+
 router.get('/search/', async (req, res) => { 
   try {
     let options = {
