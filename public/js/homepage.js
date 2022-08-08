@@ -9,22 +9,22 @@ var submitBtn = document.getElementById("homepageSubmit");
 function ddReplace1() {
     ddMain.textContent = ddOne.textContent
     searchbar.setAttribute("placeholder", "Ex. Akita, Shiba Inu, Terrier")
-    searchbar.setAttribute("data-search", "breed=")
+    ddMain.setAttribute("data-search", "breed=")
 };
 function ddReplace2() {
     ddMain.textContent = ddTwo.textContent
     searchbar.setAttribute("placeholder", "Ex. Energetic, Calm, Lots of Activity")
-    searchbar.setAttribute("data-search", "energy=")
+    ddMain.setAttribute("data-search", "energy_level_category=")
 };
 function ddReplace3() {
     ddMain.textContent = ddThree.textContent
-    searchbar.setAttribute("placeholder", "Ex. Seasonal, Infrequent, Regularly")
-    searchbar.setAttribute("data-search", "shedding=")
+    searchbar.setAttribute("placeholder", "Ex. Daily, Occasional, Weekly")
+    ddMain.setAttribute("data-search", "grooming_frequency_category=")
 };
 function ddReplace4() {
     ddMain.textContent = ddFour.textContent
     searchbar.setAttribute("placeholder", "Ex. Clever, Loyal, Playful")
-    searchbar.setAttribute("data-search", "temperment=")
+    ddMain.setAttribute("data-search", "temperament=")
 };
 
 function search() {
