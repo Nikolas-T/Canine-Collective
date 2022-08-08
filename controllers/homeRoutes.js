@@ -67,8 +67,9 @@ router.get('/search/', async (req, res) => {
       // console.log("TEST");
       // console.log(energy_levels);
   
-      // res.render('search', { 
-      // }); 
+      res.render('search', { 
+        ...output,
+      }); 
 
       res.send(output);
      });
