@@ -1,18 +1,34 @@
 const User = require('./User');
 const Dogs = require('./dogs');
-const energyLevel = require('./dogs')
+const Favorite = require('./Favorite');
+const Review = require('./Review');
 
-User.hasMany(Dogs, {
-  foreignKey: 'user_id',
-  onDelete: 'CASCADE'
+
+User.hasOne(Favorite, {
+    onDelete: "CASCADE"
 });
 
-Dogs.belongsTo(User, {
-  foreignKey: 'user_id'
+Favorite.belongsTo(User, {
+    foreignKey: {
+        allowNull: false
+    }
 });
 
-Dogs.belongsTo(User, {
-  foreignKey: 'user_id'
+Dogs.hasMany(Favorite);
+
+Favorite.belongsTo(Dogs, {
+    foreignKey: {
+        allowNull: false
+    }
+});
+
+User.hasMany(Review, {
+    onDelete: "CASCADE"
+});
+Review.belongsTo(User, {
+    foreignKey: {
+        allowNull: false
+    }
 });
 
 // // A Dog can have ONE Energy Level
@@ -32,4 +48,14 @@ Dogs.belongsTo(User, {
 //   foreignKey: ,
 
 // });
-module.exports = { User, Dogs, energyLevel };
+
+Dogs.hasMany(Review);
+Review.belongsTo(Dogs, {
+    foreignKey: {
+        name: "dog_id",
+        allowNull: false
+    }
+})
+
+
+module.exports = { User, Dogs, Favorite};
