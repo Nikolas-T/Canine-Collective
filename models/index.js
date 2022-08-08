@@ -1,5 +1,5 @@
 const User = require('./User');
-const Dog = require('./Dog');
+const Dogs = require('./dogs');
 const Favorite = require('./Favorite');
 const Review = require('./Review');
 
@@ -14,9 +14,9 @@ Favorite.belongsTo(User, {
     }
 });
 
-Dog.hasMany(Favorite);
+Dogs.hasMany(Favorite);
 
-Favorite.belongsTo(Dog, {
+Favorite.belongsTo(Dogs, {
     foreignKey: {
         allowNull: false
     }
@@ -31,8 +31,8 @@ Review.belongsTo(User, {
     }
 });
 
-Dog.hasMany(Review);
-Review.belongsTo(Dog, {
+Dogs.hasMany(Review);
+Review.belongsTo(Dogs, {
     foreignKey: {
         name: "dog_id",
         allowNull: false
@@ -40,4 +40,4 @@ Review.belongsTo(Dog, {
 })
 
 
-module.exports = { User, Dog, Favorite};
+module.exports = { User, Dogs, Favorite};
