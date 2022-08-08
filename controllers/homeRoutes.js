@@ -48,20 +48,23 @@ router.get('/search/', async (req, res) => {
         output = "No dogs found, dog.";
       }
   
-      let energy_levels = await Dogs.findAll({
-        raw: true,
-        attributes: [
-          [sequelize.fn('DISTINCT', sequelize.col('energy_level_category')), 'energy_level_category']
-        ]
-      });
+      // let energy_levels = await Dogs.findAll({
+      //   raw: true,
+      //   attributes: [
+      //     [sequelize.fn('DISTINCT', sequelize.col('energy_level_category')), 'energy_level_category']
+      //   ]
+      // });
   
-      console.log("TEST");
-      console.log(energy_levels);
+      // console.log("TEST");
+      // console.log(energy_levels);
   
-      res.render('search', { 
-        energy_levels
-      }); 
+      // res.render('search', { 
+      // }); 
+
+      res.send(output);
      });
+  } catch (err){
+    console.log (err)
   }
 
 });
