@@ -31,6 +31,24 @@ Review.belongsTo(User, {
     }
 });
 
+// // A Dog can have ONE Energy Level
+// Dogs.hasOne(energyLevel, {
+//   foreignKey: ,
+//   onDelete: ,
+// });
+
+// // An Energy Level can belong to MANY Dogs
+// energyLevel.hasMany(Dogs, {
+//   foreignKey: ,
+//   onDelete: , 
+
+// });
+
+// energyLevel.belongsTo(Dogs,{
+//   foreignKey: ,
+
+// });
+
 Dogs.hasMany(Review);
 Review.belongsTo(Dogs, {
     foreignKey: {
