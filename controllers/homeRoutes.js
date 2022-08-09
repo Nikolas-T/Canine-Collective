@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const { Dogs, User } = require('../models');
+const { Dogs, User, Favorite } = require('../models');
 const withAuth = require('../utils/auth');
 const { Op } = require("sequelize");
 const sequelize = require('../config/connection');
-const e = require('express');
 
 router.get('/', async (req, res) => {
   try {
@@ -15,19 +14,47 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
+  } else {
+    res.render('login');
   }
-  res.render('login');
 });
 
-router.get('/profile', withAuth, (req, res) => {
-  res.render('profile', {
-    logged_in: req.session.logged_in
-  });
+router.get('/profile', withAuth, async (req, res) => {
+
+  try {
+    // const favoriteData = await Favorite.findAll({
+    //   where: {
+    //     user_id: req.session.user_id
+    //   },
+    // })
+    // const favorite = favoriteData.map(favorite => favorite.get({ plain: true }));
+    // console.log(favorite[0].dog_id)
+
+    // const returnedDog = favorite[0].dog_id
+    // const dogData = await Dogs.findAll({
+    //   where: {
+    //     id: returnedDog
+    //   }
+    // })
+
+    // for (var i = 0; i < favorite.length; i++ ) {
+    //   console.log(favorite[i].dog_id)
+    // }
+
+    // const mappedDog = dogData.map(mappedDog => mappedDog.get({ plain: true }));
+    // console.log(mappedDog[0].dog_name)
+   
+    res.render('profile', {
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(400).json(err)
+  }
 });
 
 router.get('/dog/:id', async (req, res) => {
