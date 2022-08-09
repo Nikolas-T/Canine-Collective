@@ -102,7 +102,6 @@ Dogs.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'dogs'
-
     }
 );
 

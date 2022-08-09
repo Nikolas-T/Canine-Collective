@@ -2,5 +2,21 @@
     {
         "user_id": 1,
         "dog_id": 2
+    },
+    {
+        "user_id": 1,
+        "dog_id": 12
+    },
+    {
+        "user_id": 1,
+        "dog_id": 53
+    },
+    {
+        "user_id": 1,
+        "dog_id": 4
+    },
+    {
+        "user_id": 1,
+        "dog_id": 9
     }
 ]

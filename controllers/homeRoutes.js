@@ -27,28 +27,29 @@ router.get('/login', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
 
   try {
-    const favoriteData = await Favorite.findAll({
-      where: {
-        user_id: req.session.user_id
-      },
-    })
-    const favorite = favoriteData.map(favorite => favorite.get({ plain: true }));
-    console.log(favorite[0].dog_id)
+    // const favoriteData = await Favorite.findAll({
+    //   where: {
+    //     user_id: req.session.user_id
+    //   },
+    // })
+    // const favorite = favoriteData.map(favorite => favorite.get({ plain: true }));
+    // console.log(favorite[0].dog_id)
 
-    const returnedDog = favorite[0].dog_id
-    const dogData = await Dogs.findAll({
-      where: {
-        id: returnedDog
-      }
-    })
+    // const returnedDog = favorite[0].dog_id
+    // const dogData = await Dogs.findAll({
+    //   where: {
+    //     id: returnedDog
+    //   }
+    // })
 
-    
+    // for (var i = 0; i < favorite.length; i++ ) {
+    //   console.log(favorite[i].dog_id)
+    // }
 
-    const mappedDog = dogData.map(mappedDog => mappedDog.get({ plain: true }));
-    console.log(mappedDog[0].dog_name)
+    // const mappedDog = dogData.map(mappedDog => mappedDog.get({ plain: true }));
+    // console.log(mappedDog[0].dog_name)
    
     res.render('profile', {
-      dogName: mappedDog[0].dog_name,
       logged_in: req.session.logged_in
     });
   } catch (err) {
