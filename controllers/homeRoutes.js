@@ -57,7 +57,7 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
-router.get('/dog/:id', async (req, res) => {
+router.get('/dog/:id', withAuth, async (req, res) => {
 try {
   let id = req.params.id;
   console.log('Searching for ' + id);
@@ -71,6 +71,7 @@ try {
   dog = dog.dataValues;
 
   res.render('dogsModal', {
+    logged_in: req.session.logged_in,
     dog
   });
 } catch (error) {
@@ -125,6 +126,7 @@ router.get('/search/', async (req, res) => {
     console.log(dogs);
 
     res.render('results', { 
+      logged_in: req.session.logged_in,
       dogs
     }); 
 
