@@ -3,23 +3,26 @@
     <div>
       <label for="breed">Dog breed</label>
       <input class="form-input" type="text" placeholder="Ex. Shephard" name="breed" id="breed">
+      <h3>{{dogs.name}}</h3>
     </div>
     <div>
-      <label class="w-100" for="temperment">Temperment:</label>
-      <select name="temperment" id="tempermentDropDown" class="w-50 m-2">
+      <label class="w-100" for="temperment">Temperament:</label>
+      <select name="temperament" id="temperamentDropDown" class="w-50 m-2">
+        <h3>{{dogs.temperament}}</h3>
         <option value="Alert">Alert</option>
       </select>
     </div>
     <div>
       <label class="w-100" for="grooming">Grooming:</label>
       <select name="grooming" id="groomingDropdown" class="w-50 m-2">
+        <h3>{{dogs.grooming_frequency_category}}</h3>
         <option value="weekly">Weekly</option>
       </select>
     </div>
     <div>
       <label class="w-100" for="energy">Energy:</label>
       <select name="energy" id="energyDropdown" class="w-50 m-2">
-        <option value="energetic">Energetic</option>
+        <h3>{{ dogs.energy_levels }}</h3>
       </select>
     </div>
     <div class="form-group container w-100">
