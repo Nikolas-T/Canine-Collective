@@ -2,6 +2,11 @@
   color: #44433e;
   
 }
+
+#logout {
+  color: #44433e;
+}
+
 :root {
   --color-1: #a96e42;
   --color-2: #d8dfe5;
