@@ -1,19 +1,18 @@
+ <table class="table table-arrows">
+        <tr>
+            <th>Breed</th>
+            <th class="order-by-desc" >Temperament</th>
+            <th class="order-by-desc" >Energy</th>
+            <th class="order-by-desc" >Grooming</th>
+        </tr>
 
-<table class="table">
-    <tr>
-        <th>Breed</th>
-        <th>Temperament</th>
-        <th>Energy</th>
-        <th>Grooming</th>
-    </tr>
+        {{#each dogs}}
+        <tr>
+            <td><a href="/dog/{{this.id}}" target="_blank">{{this.dog_name}}</a></td>
+            <td>{{this.temperament}}</td>
+            <td>{{this.energy_level_category}}</td>
+            <td>{{this.grooming_frequency_category}}</td>
+        </tr>
+        {{/each}}
 
-    {{#each dogs}}
-    <tr>
-        <td><a href="/dog/{{this.id}}" target="_blank">{{this.dog_name}}</a></td>
-        <td>{{this.temperament}}</td>
-        <td>{{this.energy_level_category}}</td>
-        <td>{{this.grooming_frequency_category}}</td>
-    </tr>
-    {{/each}}
-
-</table>
+    </table>

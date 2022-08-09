@@ -22,7 +22,8 @@
     "micromodal": "^0.4.10",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.19",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "table-sort-js": "^1.8.0"
   },
   "repository": {
     "type": "git",
