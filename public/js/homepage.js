@@ -37,6 +37,3 @@ ddOne.addEventListener("click", ddReplace1);
 ddTwo.addEventListener("click", ddReplace2);
 ddThree.addEventListener("click", ddReplace3);
 ddFour.addEventListener("click", ddReplace4);
-
-let MicroModal = require("micromodal");
-MicroModal.init();
