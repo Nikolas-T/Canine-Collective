@@ -30,6 +30,28 @@ router.get('/profile', withAuth, (req, res) => {
   });
 });
 
+router.get('/dog/:id', async (req, res) => {
+try {
+  let id = req.params.id;
+  console.log('Searching for ' + id);
+
+  let dog = await Dogs.findOne({
+    where: {
+      'id': id
+    }
+  });
+
+  dog = dog.dataValues;
+
+  res.render('dogsModal', {
+    dog
+  });
+} catch (error) {
+  console.log(error);
+}
+
+});
+
 router.get('/search/', async (req, res) => { 
   try {
     let options = {
@@ -52,37 +74,36 @@ router.get('/search/', async (req, res) => {
       options.where.grooming_frequency_category = { [Op.like]: `%${req.query.grooming_frequency_category},%` };
     }
   
-    let dogs = Dogs.findAll(options).then(rows => {
-      let output = "";
-  
-      if (rows.length > 0) {
-        rows.forEach(row => {
-          output += `<b>${row.dog_name}</b> | ${row.temperament} | ${row.energy_level_category} | ${row.grooming_frequency_category}<br>`;
-        });
-      } else {
-        output = "No dogs found, dog.";
-      }
-  
-      // let energy_levels = await Dogs.findAll({
-      //   raw: true,
-      //   attributes: [
-      //     [sequelize.fn('DISTINCT', sequelize.col('energy_level_category')), 'energy_level_category']
-      //   ]
-      // });
-  
-      // console.log("TEST");
-      // console.log(energy_levels);
-  
-      res.render('search', { 
-        ...output,
-      }); 
+    let dogs = await Dogs.findAll(options);
+    // let output = "";
 
-      res.send(output);
-     });
+    // if (rows.length > 0) {
+    //   rows.forEach(row => {
+    //     output += `<a href="/dog/${row.id}" target="_blank"><b>${row.dog_name}</b></a> | ${row.temperament} | ${row.energy_level_category} | ${row.grooming_frequency_category}<br>`;
+    //   });
+    // } else {  
+    //   output = "No dogs found, dog.";
+    // }
+
+    // res.send(output);
+  
+    let newDogs = [];
+
+    dogs.forEach((dog, i) => {
+      newDogs[i] = dog.dataValues;
+    });
+
+    dogs = newDogs;
+
+    console.log(dogs);
+
+    res.render('results', { 
+      dogs
+    }); 
+
   } catch (err){
     console.log (err)
   }
-
 });
 
 
