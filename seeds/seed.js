@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, Dogs } = require('../models');
+const { User, Dogs, Favorite } = require('../models');
 
 const favoriteData = require("./favoriteData.json")
 const dogData = require("./csvjson.json")
@@ -28,7 +28,7 @@ const seedDatabase = async () => {
   }
 
   for (const favorite of favoriteData) {
-    await Dogs.create({
+    await Favorite.create({
       ...favorite,
     });
   }
