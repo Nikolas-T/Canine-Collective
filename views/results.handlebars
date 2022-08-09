@@ -1,3 +1,5 @@
+{{#if dogs}}
+
  <table class="table table-arrows">
         <tr>
             <th>Breed</th>
@@ -16,3 +18,8 @@
         {{/each}}
 
     </table>
+{{else}}
+    <h3> Unfortunately we couldn't find a dog like that, instead have this:</h3>
+    <a href="https://www.youtube.com/watch?v=Qkuu0Lwb5EM">
+    <img alt="Error 404" src="./img/404.png" width="250" height="250"></a>
+{{/if}}

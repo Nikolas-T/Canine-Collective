@@ -1,3 +1,4 @@
+{{#if dogs}}
 <div class="container w-25 border border-dark d-inline-block">
   <form class="border border-primary">
     <div>
@@ -34,3 +35,7 @@
 <div class="container w-75 m-5 border border-secondary d-inline-block">
 
 </div>
+
+{{else}}
+  <h3> Unfortunately we couldn't find a dog like that, instead have this:</h3>
+{{/if}}
