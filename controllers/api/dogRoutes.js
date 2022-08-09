@@ -1,6 +1,16 @@
 const router = require('express').Router();
-const { Dogs } = require('../../models/dogs');
+const { Dogs } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+router.get("/", async (req,res) => {
+  try {
+    const dogData = await Dogs.findAll({})
+    res.status(200).json(dogData)
+  } catch (err) {
+    res.status(400).json(err);
+    console.log(err)
+  }
+});
 
 router.post('/', withAuth, async (req, res) => {
   try {

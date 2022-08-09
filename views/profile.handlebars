@@ -1,6 +1,7 @@
-<div class="row mt-4">
+<div class="row mt-4 w-75 h-100">
+  <div class="shadow p-5 bg-white rounded w-100 h-100">
     {{#if dogs.length}}
-  <div class="col-md-6 canine-list">
+    <div class="col-md-6 canine-list">
     <h3>Current Canines:</h3>
 
     {{#each dogs as |dogs|}}
@@ -13,6 +14,9 @@
       </div>
     </div>
     {{/each}}
+    </div>
+    {{else}}
+    <h3>No dogs were found, please try again.</h3>
+    {{/if}}
   </div>
-  {{/if}}
 </div>

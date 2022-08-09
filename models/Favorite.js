@@ -13,17 +13,17 @@ Favorite.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: 'dog',
-      //   key: 'id',
-      // },
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
     dog_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: 'dog',
-      //   key: 'id',
-      // },
+      references: {
+        model: 'dogs',
+        key: 'id',
+      },
     },
   },
   {
